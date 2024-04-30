@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "",
   "type": "module",
-  "types": "jsonp.d.ts",
+  "types": "./dist/jsonp.d.ts",
   "source": "src/index.ts",
   "module": "./dist/jsonp.esm.js",
   "main": "./dist/jsonp.js",
@@ -32,7 +32,8 @@
     "commitizen": "^4.3.0",
     "cz-git": "^1.9.1",
     "microbundle": "^0.15.1",
-    "release-it": "^17.2.1"
+    "release-it": "^17.2.1",
+    "typescript": "^5.4.5"
   },
   "release-it": {
     "github": {
