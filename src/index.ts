@@ -8,6 +8,7 @@ type JsonpResCode = 200 | 400 | 500;
 type JsonpOptions = {
   timeout?: number;
   callbackName?: string;
+  insertDom?: HTMLElement;
 };
 
 const Jsonp = <T extends any>(url: string, params: Record<string, any>, JsonpOptions: JsonpOptions = {}) => {
@@ -59,7 +60,7 @@ const Jsonp = <T extends any>(url: string, params: Record<string, any>, JsonpOpt
         code: 500,
         data: null,
       });
-    }, JsonpOptions.timeout); // 10 秒后超时
+    }, JsonpOptions.timeout || 10000);
 
     // Clean Event
     function cleanup() {
@@ -68,9 +69,12 @@ const Jsonp = <T extends any>(url: string, params: Record<string, any>, JsonpOpt
       delete window[callbackName];
     }
 
-    // 将 script 标签添加到 DOM
-    document.body.appendChild(script);
+    // Append Dom
+    if (JsonpOptions.insertDom) {
+      JsonpOptions.insertDom.appendChild(script);
+    } else {
+      document.body.appendChild(script);
+    }
   });
 };
-
 export default Jsonp;

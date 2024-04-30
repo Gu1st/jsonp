@@ -18,6 +18,7 @@
     "login": "npm login --registry https://registry.npmjs.org/",
     "pub": "npm publish --access public --registry https://registry.npmjs.org/"
   },
+  "files": ["dist"],
   "keywords": [
     "jsonp",
     "promiseify-jsonp"
