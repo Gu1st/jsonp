@@ -1,7 +1,11 @@
 {
   "name": "@harexs/jsonp",
-  "version": "1.2.0",
-  "description": "",
+  "version": "1.2.1",
+  "description": "A simple promiseify jsonp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gu1st/jsonp"
+  },
   "type": "module",
   "types": "./dist/jsonp.d.ts",
   "source": "src/index.ts",
